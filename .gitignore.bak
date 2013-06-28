@@ -1,0 +1,13 @@
+build
+doc/_build
+.pylintrc
+*.ropeproject
+*.pyc
+glue/tests/htmlcov
+glue/qt/ui/*py
+glue/qt/glue_qt_resources.py
+*.__junk*
+*.coverage
+*htmlcov*
+Glue.egg-info
+dist

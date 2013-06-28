@@ -1,0 +1,106 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'glue/qt/ui/layertree.ui'
+#
+# Created: Fri Jun 28 10:12:41 2013
+#      by: pyside-uic 0.2.13 running on glue.external.qt 1.1.0
+#
+# WARNING! All changes made in this file will be lost!
+
+from glue.external.qt import QtCore, QtGui
+
+class Ui_LayerTree(object):
+    def setupUi(self, LayerTree):
+        LayerTree.setObjectName("LayerTree")
+        LayerTree.resize(241, 282)
+        self.verticalLayout_2 = QtGui.QVBoxLayout(LayerTree)
+        self.verticalLayout_2.setSpacing(5)
+        self.verticalLayout_2.setContentsMargins(5, 5, 5, 0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.verticalLayout = QtGui.QVBoxLayout()
+        self.verticalLayout.setSpacing(2)
+        self.verticalLayout.setContentsMargins(-1, -1, -1, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.layerTree = DataCollectionView(LayerTree)
+        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.layerTree.sizePolicy().hasHeightForWidth())
+        self.layerTree.setSizePolicy(sizePolicy)
+        self.layerTree.setMinimumSize(QtCore.QSize(0, 0))
+        self.layerTree.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.layerTree.setBaseSize(QtCore.QSize(0, 0))
+        self.layerTree.setSelectionMode(QtGui.QAbstractItemView.ExtendedSelection)
+        self.layerTree.setObjectName("layerTree")
+        self.verticalLayout.addWidget(self.layerTree)
+        self.button_row = QtGui.QHBoxLayout()
+        self.button_row.setSpacing(3)
+        self.button_row.setObjectName("button_row")
+        self.layerAddButton = QtGui.QPushButton(LayerTree)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.layerAddButton.setFont(font)
+        self.layerAddButton.setStatusTip("")
+        self.layerAddButton.setWhatsThis("")
+        self.layerAddButton.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/glue_open.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.layerAddButton.setIcon(icon)
+        self.layerAddButton.setIconSize(QtCore.QSize(18, 18))
+        self.layerAddButton.setDefault(False)
+        self.layerAddButton.setFlat(False)
+        self.layerAddButton.setObjectName("layerAddButton")
+        self.button_row.addWidget(self.layerAddButton)
+        self.newSubsetButton = GlueActionButton(LayerTree)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.newSubsetButton.setFont(font)
+        self.newSubsetButton.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icons/glue_subset.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.newSubsetButton.setIcon(icon1)
+        self.newSubsetButton.setIconSize(QtCore.QSize(19, 19))
+        self.newSubsetButton.setObjectName("newSubsetButton")
+        self.button_row.addWidget(self.newSubsetButton)
+        self.layerRemoveButton = QtGui.QPushButton(LayerTree)
+        self.layerRemoveButton.setEnabled(False)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.layerRemoveButton.setFont(font)
+        self.layerRemoveButton.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icons/glue_delete.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.layerRemoveButton.setIcon(icon2)
+        self.layerRemoveButton.setObjectName("layerRemoveButton")
+        self.button_row.addWidget(self.layerRemoveButton)
+        self.linkButton = GlueActionButton(LayerTree)
+        self.linkButton.setEnabled(True)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.linkButton.setFont(font)
+        self.linkButton.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icons/glue_link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.linkButton.setIcon(icon3)
+        self.linkButton.setObjectName("linkButton")
+        self.button_row.addWidget(self.linkButton)
+        spacerItem = QtGui.QSpacerItem(20, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.button_row.addItem(spacerItem)
+        self.verticalLayout.addLayout(self.button_row)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
+
+        self.retranslateUi(LayerTree)
+        QtCore.QMetaObject.connectSlotsByName(LayerTree)
+
+    def retranslateUi(self, LayerTree):
+        LayerTree.setWindowTitle(QtGui.QApplication.translate("LayerTree", "Form", None, QtGui.QApplication.UnicodeUTF8))
+        self.layerTree.headerItem().setText(0, QtGui.QApplication.translate("LayerTree", "Layer", None, QtGui.QApplication.UnicodeUTF8))
+        self.layerTree.headerItem().setText(1, QtGui.QApplication.translate("LayerTree", "Symbol", None, QtGui.QApplication.UnicodeUTF8))
+        self.layerAddButton.setToolTip(QtGui.QApplication.translate("LayerTree", "Load a new data set", None, QtGui.QApplication.UnicodeUTF8))
+        self.newSubsetButton.setToolTip(QtGui.QApplication.translate("LayerTree", "Create a new empty subset", None, QtGui.QApplication.UnicodeUTF8))
+        self.layerRemoveButton.setToolTip(QtGui.QApplication.translate("LayerTree", "Delete Layer", None, QtGui.QApplication.UnicodeUTF8))
+        self.linkButton.setToolTip(QtGui.QApplication.translate("LayerTree", "Link data", None, QtGui.QApplication.UnicodeUTF8))
+
+from ..widgets.data_collection_view import DataCollectionView
+from ..qtutil import GlueActionButton
+import glue_rc
