@@ -159,6 +159,10 @@ class Component(object):
         logging.debug("Using %s to index data of shape %s", key, self.shape)
         return self._data[key]
 
+    @property
+    def numeric(self):
+        return np.can_cast(self.data[0], np.complex)
+
 
 class DerivedComponent(Component):
     """ A component which derives its data from a function """
@@ -288,8 +292,7 @@ class Data(object):
         self._coordinate_links = None
 
         self.data = self
-        self._label = None
-        self.label = label  # trigger disambiguation
+        self.label = label
 
         self.edit_subset = None
 
@@ -317,11 +320,7 @@ class Data(object):
     @label.setter
     def label(self, value):
         """ Set the label to value
-
-        Each data label in a glue session must be unique. The input
-        will be auto-disambiguated if necessary
         """
-        value = Registry().register(self, value, group=Data)
         self._label = value
         self.broadcast(attribute='label')
 

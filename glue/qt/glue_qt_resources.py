@@ -2,7 +2,7 @@
 
 # Resource object code
 #
-# Created: Fri Jun 28 10:12:42 2013
+# Created: Fri Aug 2 16:17:59 2013
 #      by: The Resource Compiler for glue.external.qt (Qt v4.7.4)
 #
 # WARNING! All changes made in this file will be lost!

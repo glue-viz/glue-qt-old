@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'glue/qt/ui/link_editor.ui'
 #
-# Created: Fri Jun 28 10:12:41 2013
+# Created: Wed Jul 31 15:07:25 2013
 #      by: pyside-uic 0.2.13 running on glue.external.qt 1.1.0
 #
 # WARNING! All changes made in this file will be lost!
